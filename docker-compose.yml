@@ -1,0 +1,9 @@
+services:
+  arcgis_featurelayer_updater:
+    build:
+      context: .
+    command: >
+      sh -c "
+        cp .env.example .env &&
+        python -m app.main
+      "
