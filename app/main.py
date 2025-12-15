@@ -19,6 +19,7 @@ GIS_USERNAME: str = getenv("GIS_USERNAME", "test_user")
 GIS_PASSWORD: str = getenv("GIS_PASSWORD", "test_password")
 ITEM_ID: str = getenv("ITEM_ID", "815e5b14c4da48109f941d1560b75395")
 CSV_FILE_NAME: str = getenv("CSV_FILE_NAME", "prepared_data.csv")
+GIS_URL: str = getenv("GIS_URL", "https://www.arcgis.com")
 
 basicConfig(level=INFO)
 logger = getLogger(__name__)
@@ -31,7 +32,7 @@ def run_pipeline():
     csv_path = (base_dir.parent / CSV_FILE_NAME).resolve()
 
     features = load_csv_features(csv_path.name)
-    gis = connect_gis(GIS_USERNAME, GIS_PASSWORD)
+    gis = connect_gis(GIS_USERNAME, GIS_PASSWORD, GIS_URL)
     feature_layer = get_feature_layer(gis, ITEM_ID)
 
     clear_layer(feature_layer)

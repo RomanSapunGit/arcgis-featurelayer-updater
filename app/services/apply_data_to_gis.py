@@ -30,7 +30,7 @@ def load_csv_features(csv_path: str) -> list:
 def connect_gis(
         username: str,
         password: str,
-        url: str = "https://www.arcgis.com"
+        url: str
 ) -> GIS:
     return GIS(url, username=username, password=password)
 

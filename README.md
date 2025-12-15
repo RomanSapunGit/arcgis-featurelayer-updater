@@ -38,6 +38,8 @@ ITEM_ID=815e5b14c4da48109f941d1560b75395
 
 CSV_FILE_NAME=prepared_data.csv
 
+GIS_URL=https://www.arcgis.com
+
 ---
 
 ## Running with Docker (Recommended)
