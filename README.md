@@ -119,13 +119,13 @@ Expected Result
 Notes
 -------
 
-- Used pandas instead of spreadsheets API for simplicity
 - Column names are mapped according to feature layer but not test task, in order to map data correctly
 - Updated data is stored in local file called prepared_data.csv
 - Additionally, updated data is stored with already mapped columns for simplicity
 - Credentials are handled via environment variables  
 - HTTPS warnings may appear if SSL verification is disabled (safe for test environment)  
 - Script is idempotent — running it multiple times produces consistent results
+- Used pandas to focus on the core transformation logic first, because it allowed faster iteration and clearer implementation of the required row-expansion rules. In a production version, I would replace the Excel input with Google Sheets API to fully automate data retrieval and avoid manual exports.
 
 # If there's a need for future code modifications
 Please write to me via email: ```contact.roman.sapun@gmail.com```
